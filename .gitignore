@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Streamlit / local outputs
+.streamlit/secrets.toml
+outputs/
+*.log
+
+# Model weights (do not redistribute third-party weights)
+*.pt
+models/*.pt
+!models/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
