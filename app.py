@@ -23,8 +23,7 @@ from perception_core import metrics_to_zh_dataframe, process_video
 
 
 st.set_page_config(page_title="IASR空中态势识别集成系统 · Cloud", layout="wide")
-st.title("IASR 空中态势识别集成系统 · Cloud")
-st.caption("在线视频态势识别 · 事件预警路由 · 农业扩展接口 · 中文化结果导出")
+st.title("IASR 空中态势识别集成系统 Cloud")
 
 MAX_VIDEO_MB = int(os.getenv("IASR_MAX_VIDEO_MB", "80"))
 MAX_IMAGE_MB = int(os.getenv("IASR_MAX_IMAGE_MB", "20"))
