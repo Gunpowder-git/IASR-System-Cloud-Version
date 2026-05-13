@@ -3,8 +3,6 @@
 > 面向低空经济的「感知 → 指标 → 事件 → 预警路由」一体化原型系统。  
 > 本版本针对 **Streamlit Community Cloud 在线部署** 做了轻量化处理：支持网页上传视频/图片、在线分析、下载中文 CSV / JSON / 标注后视频 / 完整结果包。
 
----
-
 ## ✨ Features
 
 ### 1. 视频态势识别
@@ -58,8 +56,6 @@
 - 标注后视频 MP4
 - 本次运行完整结果包 ZIP
 
----
-
 ## 🚀 在线部署到 Streamlit Community Cloud
 
 ### 1. 准备 GitHub 仓库
@@ -86,8 +82,6 @@ models/*.pt
 
 本 Cloud 版本默认允许运行时自动下载 `yolov8n.pt`。
 
----
-
 ### 2. 在 Streamlit Community Cloud 创建应用
 1. 登录 Streamlit Community Cloud
 2. 选择你的 GitHub 仓库
@@ -101,8 +95,6 @@ app.py
 5. 点击 Deploy
 
 首次运行可能需要下载 YOLO 权重，加载会稍慢；之后同一实例内会缓存模型。
-
----
 
 ## 🖥️ 本地运行
 
@@ -138,8 +130,6 @@ python -m streamlit run app.py
 http://localhost:8501
 ```
 
----
-
 ## 🧭 使用方法
 
 ### 视频分析
@@ -164,8 +154,6 @@ http://localhost:8501
 4. 点击「开始农业扩展分析」
 5. 下载农业指标表、事件表、派单日志或完整结果包
 
----
-
 ## 📦 输出文件
 
 每次运行都会写入一个独立目录，例如：
@@ -189,8 +177,6 @@ evidence/                   # 事件证据截图
 
 Cloud 环境的文件是临时的，请在页面上及时下载。
 
----
-
 ## ⚙️ 重要配置
 
 ### `.streamlit/config.toml`
@@ -206,8 +192,6 @@ gatherUsageStats = false
 ### 依赖说明
 
 Cloud 版本使用 `opencv-python-headless` 与 `imageio-ffmpeg`，因此不需要 `packages.txt` 安装系统级 `ffmpeg`。这样可以避免 Streamlit Community Cloud 上的 apt 依赖冲突。
-
----
 
 ## ❓常见问题
 
@@ -227,8 +211,6 @@ Cloud 版本默认会在首次视频分析时下载 YOLO 权重，并初始化�
 ### 4. 农业病害判断准确吗？
 当前只是 MVP 级启发式判断，用于展示「农业扩展接口」和事件联动闭环，不用于真实农事诊断。
 
----
-
 ## 🧩 Roadmap
 
 - 多路摄像头/无人机视频源管理
@@ -237,13 +219,9 @@ Cloud 版本默认会在首次视频分析时下载 YOLO 权重，并初始化�
 - 细分农业病害模型插件
 - 对接真实平台 API：派单、消息推送、处置闭环
 
----
-
 ## License
 
 MIT License
-
----
 
 ## Acknowledgements
 
