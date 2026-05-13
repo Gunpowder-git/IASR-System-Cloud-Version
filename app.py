@@ -163,7 +163,7 @@ SCENE_PRESETS = {
 
 with st.sidebar:
     st.header("输入与运行")
-    st.info(f"Cloud 演示建议上传 10–20 秒短视频，单个视频建议 ≤ {MAX_VIDEO_MB} MB。首次运行可能需要下载 YOLO 权重。")
+    st.info(f"Cloud 建议上传 10–20 秒短视频，单个视频建议 ≤ {MAX_VIDEO_MB} MB。首次运行可能需要下载 YOLO 权重。")
     uploaded = st.file_uploader(
         "上传视频（mp4 / mov / mkv）",
         type=["mp4", "mov", "mkv"],
