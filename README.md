@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # IASR System · Streamlit Community Cloud 版
 
 > 面向低空经济的「感知 → 指标 → 事件 → 预警路由」一体化原型系统。  
@@ -73,7 +72,6 @@ IASR-System/
   event_engine.py
   agriculture_core.py
   requirements.txt
-  packages.txt
   .streamlit/config.toml
   models/.gitkeep
   README.md
@@ -205,15 +203,9 @@ maxUploadSize = 100
 gatherUsageStats = false
 ```
 
-### `packages.txt`
+### 依赖说明
 
-```text
-libgl1
-libglib2.0-0
-ffmpeg
-```
-
-用于安装 OpenCV/视频处理可能需要的 Linux 系统依赖。
+Cloud 版本使用 `opencv-python-headless` 与 `imageio-ffmpeg`，因此不需要 `packages.txt` 安装系统级 `ffmpeg`。这样可以避免 Streamlit Community Cloud 上的 apt 依赖冲突。
 
 ---
 
@@ -257,8 +249,5 @@ MIT License
 
 - Ultralytics YOLO
 - Streamlit
-- OpenCV / FFmpeg
+- OpenCV Headless / imageio-ffmpeg
 - Tongji University
-=======
-# IASR-System-Cloud-Version
->>>>>>> 957112062aecd42372a2432fd4fe11d6b99cb74c
