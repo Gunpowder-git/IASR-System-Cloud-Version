@@ -260,7 +260,7 @@ if run_btn:
             "out_video": out_video,
             "paths": paths,
         }
-        st.success(f"视频分析完成。本次输出目录：{out_dir}")
+        st.success(f"视频分析完成，下载所有输出文件请选择“输出文件”栏目")
     except Exception as exc:
         display_error(exc)
 
@@ -303,10 +303,10 @@ with tab1:
         }).set_index("时间(s)")
         st.line_chart(chart_df)
 
-        st.write("**中文化指标表（最近20行）**")
+        st.write("**指标表（最近20行）**")
         df_zh = metrics_to_zh_dataframe(df)
         st.dataframe(df_zh.tail(20), use_container_width=True)
-        show_download(paths["metrics_zh_csv"], "下载中文指标表 metrics_zh.csv", "metrics_zh.csv", "text/csv")
+        show_download(paths["metrics_zh_csv"], "下载指标表 metrics_zh.csv", "metrics_zh.csv", "text/csv")
 
 with tab2:
     st.subheader("预警中心：事件输出与联动派单")
@@ -448,14 +448,9 @@ with tab4:
 
 with tab5:
     st.subheader("输出文件与运行记录")
-    if not video_result and not st.session_state.get("crop_result"):
-        st.info("运行后会在这里显示本次输出目录。所有输出都写入 outputs/runs/ 下的独立文件夹，不会覆盖历史结果。")
     if video_result:
-        st.write("**最近一次视频分析输出**")
         st.code(video_result["out_dir"], language="text")
         paths = video_result["paths"]
-        for key, value in paths.items():
-            st.write(f"- `{key}`: `{value}`")
         show_download(paths["run_config_json"], "下载运行配置 run_config.json", "run_config.json", "application/json")
         zip_path = make_run_zip(video_result["out_dir"])
         show_download(zip_path, "下载本次视频分析完整结果包 .zip", f"{video_result['run_id']}.zip", "application/zip")
@@ -463,7 +458,5 @@ with tab5:
         crop_result = st.session_state["crop_result"]
         st.write("**最近一次农业扩展输出**")
         st.code(crop_result["out_dir"], language="text")
-        for key, value in crop_result["paths"].items():
-            st.write(f"- `{key}`: `{value}`")
         crop_zip = make_run_zip(crop_result["out_dir"])
         show_download(crop_zip, "下载本次农业分析完整结果包 .zip", f"{crop_result['run_id']}.zip", "application/zip")
