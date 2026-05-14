@@ -1,6 +1,7 @@
 streamlit
 ultralytics-opencv-headless
 opencv-python-headless
+lapx
 pandas
 numpy
 matplotlib
