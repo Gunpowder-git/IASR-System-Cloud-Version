@@ -447,9 +447,8 @@ with tab4:
             show_download(paths["dispatch_zh_csv"], "下载农业派单日志", "agriculture_dispatch_log_zh.csv", "text/csv")
 
 with tab5:
-    st.subheader("输出文件与运行记录")
+    st.subheader("输出文件")
     if video_result:
-        st.code(video_result["out_dir"], language="text")
         paths = video_result["paths"]
         show_download(paths["run_config_json"], "下载运行配置 run_config.json", "run_config.json", "application/json")
         zip_path = make_run_zip(video_result["out_dir"])
