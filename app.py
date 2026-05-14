@@ -22,8 +22,8 @@ from event_engine import events_to_zh_dataframe, dispatch_to_zh_dataframe
 from perception_core import metrics_to_zh_dataframe, process_video
 
 
-st.set_page_config(page_title="IASR空中态势识别集成系统 · Cloud", layout="wide")
-st.title("IASR 空中态势识别集成系统 Cloud")
+st.set_page_config(page_title="IASR空中态势识别集成系统 Cloud☁️", layout="wide")
+st.title("IASR 空中态势识别集成系统 Cloud☁️")
 
 MAX_VIDEO_MB = int(os.getenv("IASR_MAX_VIDEO_MB", "80"))
 MAX_IMAGE_MB = int(os.getenv("IASR_MAX_IMAGE_MB", "20"))
